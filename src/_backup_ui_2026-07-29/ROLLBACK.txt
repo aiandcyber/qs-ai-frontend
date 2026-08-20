@@ -1,0 +1,7 @@
+
+To roll back:
+  cp src/_backup_ui_2026-07-29/App.tsx src/App.tsx
+  cp src/_backup_ui_2026-07-29/index.css src/index.css
+  cp src/_backup_ui_2026-07-29/i18n.ts src/i18n.ts
+  cp src/_backup_ui_2026-07-29/AgentPanel.tsx src/components/AgentPanel.tsx
+
