@@ -11,27 +11,31 @@ function initials(name?: string, email?: string): string {
 }
 
 export function AuthUserMenu() {
-  const { user, logout, loginWithRedirect, isAuthenticated, isLoading } = useAuth0()
+  const { user, logout, loginWithRedirect, isAuthenticated, isLoading, error } = useAuth0()
   if (isLoading) return null
 
   if (!isAuthenticated) {
     return (
-      <button type="button" className="btn login-btn" onClick={() => loginWithRedirect()}>
-        Login
-      </button>
+      <div className="sidebar-auth">
+        <button type="button" className="btn login-btn" onClick={() => loginWithRedirect()}>
+          Login
+        </button>
+        {error && <span className="auth-error" title={error.message}>Login error: {error.message}</span>}
+      </div>
     )
   }
 
   const label = user?.email ?? user?.name ?? 'Signed in'
   return (
-    <div className="user-menu">
+    <div className="sidebar-auth user-menu">
       <span className="avatar" title={label}>{initials(user?.name, user?.email)}</span>
+      <span className="user-label" title={label}>{label}</span>
       <button
         type="button"
-        className="btn secondary logout-btn"
+        className="btn logout-btn"
         onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
       >
-        Sign out
+        Logout
       </button>
     </div>
   )

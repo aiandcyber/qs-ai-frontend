@@ -372,6 +372,7 @@ export default function App() {
           <div className="brand-mark">
             {t(locale, 'brand')} <span className="brand-copilot">{t(locale, 'copilot')}</span>
           </div>
+          {AUTH_CONFIGURED && <AuthUserMenu />}
         </div>
         <nav className="nav">
           {NAV_GROUPS.map((group) => (
@@ -436,7 +437,6 @@ export default function App() {
                 onChange={(e) => onUpload(e.target.files?.[0] || null)}
               />
             </label>
-            {AUTH_CONFIGURED && <AuthUserMenu />}
           </div>
         </header>
 

@@ -25,6 +25,7 @@ export function AuthShell({ children }: { children: ReactNode }) {
   if (!AUTH_CONFIGURED) {
     return <AuthActionProvider>{children}</AuthActionProvider>
   }
+
   return (
     <Auth0Provider
       domain={AUTH0_DOMAIN}
