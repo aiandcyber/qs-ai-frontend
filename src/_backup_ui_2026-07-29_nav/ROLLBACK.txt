@@ -1,6 +1,0 @@
-Rollback (nav-modern version before content redesign):
-  cp src/_backup_ui_2026-07-29_nav/App.tsx src/App.tsx
-  cp src/_backup_ui_2026-07-29_nav/index.css src/index.css
-  cp src/_backup_ui_2026-07-29_nav/i18n.ts src/i18n.ts
-  cp src/_backup_ui_2026-07-29_nav/AgentPanel.tsx src/components/AgentPanel.tsx
-

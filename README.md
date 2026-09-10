@@ -48,8 +48,6 @@ wrangler.jsonc       Cloudflare frontend deploy config
 package.json         Dependencies and scripts
 ```
 
-Note: `src/_backup_ui_*` folders are historical UI snapshots kept for rollback reference.
-
 ## Local development
 
 Requires the [backend](https://github.com/aiandcyber/qs-ai-backend) running on port **8000** (or set `VITE_API_TARGET`).
@@ -102,17 +100,15 @@ Ensure the backend `CORS_ORIGINS` includes your frontend origin (e.g. `https://q
 3. Add your own Auth0 SPA application if you need login
 4. Point `VITE_API_BASE` at your API for production builds
 5. Rebrand / trim modules as needed; keep the “QS decides” wording if you demo to professionals
-6. Remove `src/_backup_ui_*` if you do not need historical UI backups
-
 ## Security notes for public use
 
 - No API keys belong in this frontend repo
 - Auth0 **SPA client IDs** may appear in build env vars; they are public client identifiers — protect APIs with proper audience validation and secrets on the backend
 - Do not embed evaluator passwords or real project documents in the UI source
 
-## Licence / status
+## Licence
 
-Prototype created for Smart QS Hackathon 2026. Provided as-is for learning, demo, and further development. Confirm licence / IP terms with your team and the Programme organisers before commercial reuse.
+No licensing restriction. Anyone is free to use, copy, modify, and redistribute this software for any purpose, including commercial use, without asking permission. Provided as-is, without warranty.
 
 ## Acknowledgements
 
